@@ -1,0 +1,349 @@
+/* ----- Configurações default ----- */
+:root{
+    --primary-color: #172C4B;
+    --light-color: #FFF;
+    --body-color: #F0F0F0;
+    --dark-color: #0E1625;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+}
+
+/* ----- Configurações default ----- */
+
+/* ----- Configurações principais ----- */
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    border-radius: 24px;
+    border: none;
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    transition: .4s;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+
+header{
+    width: 100%;
+    background-color: var(--primary-color);
+}
+
+main{
+    background-color: var(--body-color);
+}
+
+section{
+    width: 100%;
+    display: flex;
+}
+
+/* ----- Configurações principais ----- */
+
+/* ----- Configurações cabeçalho BEGIN ----- */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 2vw;
+}
+
+.logo{
+    width: 100px;
+    cursor: pointer;
+}
+
+.menu-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw; /* talvez mudar o gap de acordo com a tela */
+}
+
+.menu-header > li > a{
+    color: var(--light-color);
+}
+
+.menu-header > li > a:hover{
+    color: var(--dark-color);
+}
+
+#btn-pedir-agora{
+    font-size: 1.2rem;
+    padding: 0.8rem 2.8rem;
+}
+
+/* ----- Configurações cabeçalho END ----- */
+
+/* ----- Configurações corpo BEGIN ----- */
+
+#home{
+    background-color: var(--primary-color);
+}
+
+.fees-box{
+    width: 90%;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    border-radius: 24px;
+    padding: 4vh 2vw; /* VERIFICAR MOBILE */
+    margin: 0 auto;
+    margin-top: -8vh;  /* VERIFICAR MOBILE */
+}
+
+.fees-box > h2{
+    text-align: center;
+}
+
+.fees{
+    margin-top: 4vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fees > div{
+    width: 30%;
+    text-align: center;
+}
+
+.fees > div:nth-child(2){
+    border-left: 1px solid var(--light-color);
+    border-right: 1px solid var(--light-color);
+}
+
+.benefits-card{
+    background-color: var(--light-color);
+    box-shadow: 2px 4px 4px #ccc;
+    border-radius: 12px;
+    padding: 2vh 2vw;
+    width: 300px;
+}
+
+.benefits-card > p:first-child{
+    font-weight: 600;
+    margin-bottom: 2vh;    
+}
+
+.benefits-card > p:last-child{
+    font-weight: 200;
+}
+
+/* ----- Configurações corpo END ----- */
+
+/* ----- Configurações rodapé BEGIN ----- */
+
+footer{
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+footer > img{
+    margin: 4vh 0 0 8vw;
+}
+
+.footer-credits{
+    background-color: var(--dark-color);
+    height: 8vh;
+    padding-top: 2vh;
+    color: var(--light-color);
+    text-align: center;
+}
+
+/* ----- Configurações rodapé END ----- */
+
+@media screen and (min-device-width: 500px){
+
+    h1{
+        font-size: 4.2rem;
+    }
+
+    h2{
+        font-size: 2.4rem;
+        font-weight: 200;
+        text-align: center;
+        margin-bottom: 4vh;
+    }
+
+    h3{
+        font-size: 1.8rem;
+        font-weight: 200;
+    }
+
+    p{
+        font-size: 1.4rem;
+    }
+
+    section{
+        justify-content: center;
+    }
+
+    .btn-toHire{
+        padding: 1.6vh 2.4vw;
+        font-size: 1.2rem;
+        margin-top: 4vh;
+    }
+
+    #home{
+        gap: 16vw;
+    }
+
+    #home > div{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        height: 100vh;
+        gap: 1vh;
+        color: var(--light-color);
+    }  
+
+    #home > div > img{
+        width: max(20vw, 200px);
+    }
+
+    /* .fees-box{
+        
+    } */
+
+    #product{
+        padding: 4vh 8vw;
+        gap: 4vw;   
+    }
+
+    #product > div {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #product > div > h2 {
+        text-align: left;
+    }
+
+    #product > div > p {
+        font-size: 1.2rem;
+    }
+
+    #product > div > img{
+        width: max(16vw, 160px);
+        margin-left: 8vw;
+    }
+
+    #product > div > button{
+        width: 200px;
+        background-color: var(--primary-color);
+        color: var(--light-color);
+    }
+
+    #product > div > button:hover{
+        background-color: var(--dark-color);
+    }
+
+    #benefits{
+        flex-direction: column;
+        align-items: center;
+        margin: 4vh 0;
+    }
+
+    .benefits-box{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2vw;
+        width: 90%;
+    }
+
+    .benefits-card > p:first-child{
+        font-size: 1.2rem;
+    }
+
+    .benefits-card > p:last-child{
+        font-size: 1.2rem;
+    }
+
+    #faq{
+        flex-direction: column;
+    }
+
+    .accordion{
+        width: max(60vw, 300px);
+        margin: 0 auto;
+    }
+
+    .accordion-item{
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+    }
+
+    .accordion-header{
+        padding: 1rem;
+        font-size: 1.3rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .accordion-content{
+        padding: 0.4rem;
+        font-size: .9rem;
+        line-height: 1.5;
+    }
+
+    .accordion-item--active .accordion-header{
+        background-color: #ddd;
+    }
+
+    .accordion-item--active .accordion-content{
+        max-height: 1000px;
+        transition: max-height 0.5s ease-in-out;
+    }
+
+    .accordion-item--closed .accordion-content{
+        max-height: 0;
+        overflow: hidden;
+    }
+    
+    .accordion-content{
+        transition: max-height 0.3s ease-out;
+    }
+
+    
+
+    .box-footer{
+        display: flex;
+        padding: 2vh 8vw;
+        justify-content: space-between;
+        color: var(--light-color);
+    }
+
+    .box-footer > div > ul > li > a{
+        color: var(--light-color);
+    }
+
+
+
+    
+}
+
+@media screen and (max-device-width: 500px){
+
+}
