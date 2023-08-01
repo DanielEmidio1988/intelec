@@ -8,15 +8,15 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <img src="./assets/icon-whatsapp.png" class="icon-whatsapp" alt="icone whatsapp">
     <header>
         <nav>   
             <img src="/assets/LOGO_INTELEC.svg" alt="logo intelec" class="logo">
             <ul class="menu-header">
                 <li><a href="">Inicio</a></li>
-                <li><a href="">Sobre nós</a></li>
                 <li><a href="">Maquininha</a></li>
+                <li><a href="">Simulador</a></li>
                 <li><a href="">Vantagens</a></li>
-                <li><a href="">Taxas</a></li>
                 <li><button id="btn-pedir-agora">Pedir agora</button></li>
             </ul>   
         </nav>
@@ -35,32 +35,10 @@
         </section>
 
         <div class="fees-box">
-            <h2>Confira nossas taxas</h2>
-            <div class="fees">
-                <div>
-                    <h3>CONDIÇÃO 1</h3>
-                    <h3>0,00%</h3>
-                </div>
-                <div>
-                    <h3>CONDIÇÃO 2</h3>
-                    <h3>0,00%</h3>
-                </div>
-                <div>
-                    <h3>CONDIÇÃO 3</h3>
-                    <h3>0,00%</h3>
-                </div>
-            </div>
+            <h3>Obtenha os melhores lucros com nossas maquininhas</h3>
+            <p>Faça uma simulação e confira nossas taxas!</p>
+            <button>Simule já!</button>
         </div>
-
-        <!-- Incluir seção about -->
-        <!-- <section id="about">
-            <div>
-
-            </div>
-            <div>
-
-            </div>
-        </section> -->
         
         <section id="product">
             <div>
@@ -68,8 +46,67 @@
             </div>
             <div>
                 <h2>Sobre a maquininha</h2>
-                <p>Sua melhor escolha de maquininha com as melhores taxas do mercado que te ajuda economizar e bombar o seu negócio - texto conc.</p>
+                <p class="text-product">Sua melhor escolha de maquininha com as melhores taxas do mercado que te ajuda economizar e bombar o seu negócio - texto conc.</p>
+                <p class="check-product">&check; Caracteristica 1</p>
+                <p class="check-product">&check; Caracteristica 2</p>
+                <p class="check-product">&check; Caracteristica 3</p>
+                <p class="check-product">&check; Caracteristica 4</p>
                 <button class="btn-toHire">Pedir agora</button>
+            </div>
+        </section>
+
+        <section id="simulator">
+            <h2>Faça uma simulação da sua venda</h2>
+            <div class="simulator-box">
+                <div class="simulator-fees">
+                    <div class="sales-input">
+                        <label for="sales">Valor da Venda:</label>
+                        <input id="sales-input" name="sales" placeholder="R$">
+                    </div>
+                    <div class="fees-input">
+                        <div>
+                            <label for="fees">Taxa:</label>
+                            <input id="fees-input" name="fees" disabled>
+                        </div>
+                        <div>
+                            <label for="quota">Parcelas:</label>
+                            <select name="quota" id="quota-input">
+                                <option value="3.79">1</option>
+                                <option value="6.02">2</option>
+                                <option value="7.14">3</option>
+                                <option value="8.21">4</option>
+                                <option value="9.31">5</option>
+                                <option value="10.42">6</option>
+                                <option value="11.42">7</option>
+                                <option value="11.83">8</option>
+                                <option value="11.89">9</option>
+                                <option value="11.96">10</option>
+                                <option value="12.95">11</option>
+                                <option value="12.98">12</option>
+                                <option value="17.87">13</option>
+                                <option value="18.73">14</option>
+                                <option value="19.75">15</option>
+                                <option value="21.09">16</option>
+                                <option value="21.38">17</option>
+                                <option value="22.02">18</option>
+                                <option value="22.04">19</option>
+                                <option value="22.09">20</option>
+                                <option value="22.30">21</option>
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="simulator-result">
+                    <div class="result-value">
+                        <p>Você recebe:</p>
+                        <p class="result-text-value">R$ 0,00</p>
+                    </div>
+                    <div class="result-comparative">
+                        <p>Com a <span class="name-result">Intelec</span>, você economiza <span id="saving-result">R$ 0,00</span> em relação a concorrência. </p>
+                    </div>
+                    <button class="btn-toHire">Pedir agora</button>
+                </div>
             </div>
         </section>
 
@@ -77,20 +114,24 @@
             <h2>Principais vantagens da Intelec</h2>
             <div class="benefits-box">
                 <div class="benefits-card">
-                    <p>Beneficio 1</p>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae adipisci blanditiis consequatur dolores perferendis. Libero.</p>
+                    <img src="./assets/piggy-bank.svg" alt="icon benefits">
+                    <p class="title-card">Beneficio 1</p>
+                    <p class="content-card">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae adipisci blanditiis consequatur dolores perferendis. Libero.</p>
                 </div>
                 <div class="benefits-card">
-                    <p>Beneficio 2</p>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae adipisci blanditiis consequatur dolores perferendis. Libero.</p>
+                    <img src="./assets/piggy-bank.svg" alt="icon benefits">
+                    <p class="title-card">Beneficio 2</p>
+                    <p class="content-card">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae adipisci blanditiis consequatur dolores perferendis. Libero.</p>
                 </div>
                 <div class="benefits-card">
-                    <p>Beneficio 3</p>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae adipisci blanditiis consequatur dolores perferendis. Libero.</p>
+                    <img src="./assets/piggy-bank.svg" alt="icon benefits">
+                    <p class="title-card">Beneficio 3</p>
+                    <p class="content-card">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae adipisci blanditiis consequatur dolores perferendis. Libero.</p>
                 </div>
                 <div class="benefits-card">
-                    <p>Beneficio 4</p>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae adipisci blanditiis consequatur dolores perferendis. Libero.</p>
+                    <img src="./assets/piggy-bank.svg" alt="icon benefits">
+                    <p class="title-card">Beneficio 4</p>
+                    <p class="content-card">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae adipisci blanditiis consequatur dolores perferendis. Libero.</p>
                 </div>
             </div>
 
@@ -128,16 +169,15 @@
         </section>
     </main>
     <footer>
-        <img src="/assets/LOGO_INTELEC.svg" alt="logo intelec" class="logo">
+        <img src="/assets/LOGO_INTELEC-LIGHT.svg" alt="logo intelec" class="logo">
         <div class="box-footer">
             <div>
                 <ul>
                     <li>Intelec</li>
                     <li><a href="">Inicio</a></li>
-                    <li><a href="">Sobre nós</a></li>
-                    <li><a href="">Maquininha</a></li>
+                    <li><a href="">A maquininha</a></li>
+                    <li><a href="">Simulador</a></li>
                     <li><a href="">Vantagens</a></li>
-                    <li><a href="">Taxas</a></li>
                 </ul>
             </div>
             <div>

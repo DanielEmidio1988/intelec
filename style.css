@@ -4,6 +4,8 @@
     --light-color: #FFF;
     --body-color: #F0F0F0;
     --dark-color: #0E1625;
+    --box-section-color-light: #F6F4EF;
+    --box-section-color-gray: #85848C;
 }
 
 *{
@@ -28,20 +30,20 @@ a{
 button{
     border-radius: 24px;
     border: none;
-    background-color: var(--light-color);
-    color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--light-color);
     transition: .4s;
     cursor: pointer;
 }
 
 button:hover{
     background-color: var(--dark-color);
-    color: var(--light-color);
+    /* color: var(--light-color); */
 }
 
 header{
     width: 100%;
-    background-color: var(--primary-color);
+    background-color: var(--light-color);
 }
 
 main{
@@ -76,11 +78,12 @@ nav{
 }
 
 .menu-header > li > a{
-    color: var(--light-color);
+    color: var(--primary-color);
 }
 
 .menu-header > li > a:hover{
-    color: var(--dark-color);
+    /* color: var(--dark-color); */
+    opacity: 0.5;
 }
 
 #btn-pedir-agora{
@@ -97,49 +100,58 @@ nav{
 }
 
 .fees-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
     width: 90%;
     background-color: var(--dark-color);
     color: var(--light-color);
     border-radius: 24px;
-    padding: 4vh 2vw; /* VERIFICAR MOBILE */
+    padding: 2vh 2vw; /* VERIFICAR MOBILE */
     margin: 0 auto;
     margin-top: -8vh;  /* VERIFICAR MOBILE */
 }
 
-.fees-box > h2{
-    text-align: center;
+.fees-box > h3 {
+    font-weight: bold;
+    margin-bottom: 2vh;
 }
 
-.fees{
-    margin-top: 4vh;
-    display: flex;
-    justify-content: space-between;
+.fees-box > button{
+    margin-top: 2vh;
+    padding: 2vh 2vw;
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    border-radius: 24px;
 }
 
-.fees > div{
-    width: 30%;
-    text-align: center;
-}
-
-.fees > div:nth-child(2){
-    border-left: 1px solid var(--light-color);
-    border-right: 1px solid var(--light-color);
+.fees-box > button:hover{
+    opacity: 0.6;
 }
 
 .benefits-card{
     background-color: var(--light-color);
     box-shadow: 2px 4px 4px #ccc;
     border-radius: 12px;
-    padding: 2vh 2vw;
+    padding: 4vh 2vw;
     width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.benefits-card > p:first-child{
-    font-weight: 600;
-    margin-bottom: 2vh;    
+.benefits-card > img{
+    width: 64px;
 }
 
-.benefits-card > p:last-child{
+.title-card{
+    font-weight: bold;
+    margin: 2vh 0; 
+}
+
+.content-card{
     font-weight: 200;
 }
 
@@ -170,6 +182,14 @@ footer > img{
 
 @media screen and (min-device-width: 500px){
 
+    .icon-whatsapp{
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        width: 80px;
+        cursor: pointer;
+    }
+
     h1{
         font-size: 4.2rem;
     }
@@ -178,11 +198,11 @@ footer > img{
         font-size: 2.4rem;
         font-weight: 200;
         text-align: center;
-        margin-bottom: 4vh;
+        margin: 4vh 0;
     }
 
     h3{
-        font-size: 1.8rem;
+        font-size: 2rem;
         font-weight: 200;
     }
 
@@ -214,13 +234,20 @@ footer > img{
         color: var(--light-color);
     }  
 
-    #home > div > img{
-        width: max(20vw, 200px);
+    #home button{
+        background-color: var(--light-color);
+        color: var(--primary-color);
     }
 
-    /* .fees-box{
-        
-    } */
+    #home button:hover{
+        background-color: var(--dark-color);
+        color: var(--light-color);
+    }
+
+    #home > div > img{
+        width: max(32vw, 200px);
+        filter: drop-shadow(12px 12px 0px var(--dark-color));
+    }
 
     #product{
         padding: 4vh 8vw;
@@ -238,22 +265,34 @@ footer > img{
         text-align: left;
     }
 
-    #product > div > p {
+    #product > div > p{
+        margin-bottom: 2vh;
+    }
+
+    .text-product {
         font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .check-product{
+        font-size: 1rem;
+        font-weight: 200;
     }
 
     #product > div > img{
-        width: max(16vw, 160px);
+        width: max(28vw, 160px);
         margin-left: 8vw;
     }
 
-    #product > div > button{
+    #product > div > button,
+    .simulator-result > button{
         width: 200px;
         background-color: var(--primary-color);
         color: var(--light-color);
     }
 
-    #product > div > button:hover{
+    #product > div > button:hover,
+    .simulator-result > button:hover{
         background-color: var(--dark-color);
     }
 
@@ -261,6 +300,87 @@ footer > img{
         flex-direction: column;
         align-items: center;
         margin: 4vh 0;
+    }
+
+    #simulator{
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--primary-color);
+        padding: 4vh 0;
+    }
+
+    #simulator > h2{
+        color: var(--light-color);
+    }
+
+    .simulator-box{
+        background-color: var(--box-section-color-light);
+        width: 90%;
+        border-radius: 8px;
+        display: flex;
+        padding: 4vh 4vw;
+    }
+
+    .simulator-box > div{
+        width: 50%;
+    }
+
+    .simulator-fees div{
+        display: flex;
+    }
+
+    .simulator-fees label{
+        color: var(--box-section-color-gray);
+        font-size: 1.2rem;
+        margin: 2vh 0 1vh 0;
+    }
+
+    .simulator-fees div input,
+    .simulator-fees div select{     
+        height: 6vh;
+        border-radius: 4px;
+        border: 1px solid var(--box-section-color-gray);
+        padding-left: 1vw;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+    .sales-input{
+        flex-direction: column;
+        width: 70%;
+    }
+
+    .fees-input {
+        justify-content: space-between;
+        width: 70%;
+        gap: 2vw;
+    }
+
+    .fees-input > div{
+        flex-direction: column;   
+        width: 50%;  
+    }
+
+    .result-text-value{
+        margin: 2vh 0;
+        color: var(--primary-color);
+        font-weight: bold;
+        font-size: 3rem;
+    }
+
+    .result-comparative > p{
+        font-size: 1rem;
+    }
+
+    .result-comparative > p > span{
+        font-weight: bold;
+    }
+
+    #saving-result{
+        background-color: var(--primary-color);
+        color: var(--light-color);
+        padding: 0.5vh 0.5vw;
+        border-radius: 12px;
     }
 
     .benefits-box{
@@ -326,8 +446,6 @@ footer > img{
         transition: max-height 0.3s ease-out;
     }
 
-    
-
     .box-footer{
         display: flex;
         padding: 2vh 8vw;
@@ -335,13 +453,17 @@ footer > img{
         color: var(--light-color);
     }
 
-    .box-footer > div > ul > li > a{
-        color: var(--light-color);
+    .box-footer > div > ul > li{
+        font-size: 1.2rem;
+        font-weight: bold;
     }
 
-
-
-    
+    .box-footer > div > ul > li > a{
+        color: var(--light-color);
+        font-size: 1rem;
+        font-weight: lighter;
+    }
+   
 }
 
 @media screen and (max-device-width: 500px){
