@@ -8,17 +8,18 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <img src="./assets/icon-whatsapp.png" class="icon-whatsapp" alt="icone whatsapp">
+    <img src="./assets/icon-whatsapp.png" class="icon-whatsapp" alt="icone whatsapp" onclick="redirectToWhatsApp()">
     <header>
         <nav>   
             <img src="./assets/LOGO_INTELEC.svg" alt="logo intelec" class="logo">
             <ul class="menu-header">
-                <li><a href="">Inicio</a></li>
-                <li><a href="">Maquininha</a></li>
-                <li><a href="">Simulador</a></li>
-                <li><a href="">Vantagens</a></li>
-                <li><button id="btn-pedir-agora">Pedir agora</button></li>
-            </ul>   
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#product">Maquininha</a></li>
+                <li><a href="#simulator">Simulador</a></li>
+                <li><a href="#benefits">Vantagens</a></li>
+                <li><button id="btn-pedir-agora" onclick="redirectToWhatsApp()">Pedir agora</button></li>
+            </ul>
+            <img src="./assets/list.svg" alt="icone menu intelec" class="menu-hamburguer" onclick="ToggleMenu()">   
         </nav>
     </header>
     <main>
@@ -27,7 +28,7 @@
                 <h1>Sua Mensagem</h1>
                 <h1>inserida aqui!</h1>
                 <p>Receba sua maquininha...</p>
-                <button class="btn-toHire">Pedir Agora</button>
+                <button class="btn-toHire" onclick="redirectToWhatsApp()">Pedir Agora</button>
             </div>
             <div>
                 <img src="./assets/maq.png" alt="maquininha intelec">
@@ -37,7 +38,7 @@
         <div class="fees-box">
             <h3>Obtenha os melhores lucros com nossas maquininhas</h3>
             <p>Faça uma simulação e confira nossas taxas!</p>
-            <button>Simule já!</button>
+            <button id="simulate-button">Simule já!</button>
         </div>
         
         <section id="product">
@@ -51,7 +52,7 @@
                 <p class="check-product">&check; Caracteristica 2</p>
                 <p class="check-product">&check; Caracteristica 3</p>
                 <p class="check-product">&check; Caracteristica 4</p>
-                <button class="btn-toHire">Pedir agora</button>
+                <button class="btn-toHire" onclick="redirectToWhatsApp()">Pedir agora</button>
             </div>
         </section>
 
@@ -105,7 +106,7 @@
                     <div class="result-comparative">
                         <p>Com a <span class="name-result">Intelec</span>, você economiza <span id="saving-result">R$ 0,00</span> em relação a concorrência. </p>
                     </div>
-                    <button class="btn-toHire">Pedir agora</button>
+                    <button class="btn-toHire" onclick="redirectToWhatsApp()">Pedir agora</button>
                 </div>
             </div>
         </section>
@@ -169,15 +170,27 @@
         </section>
     </main>
     <footer>
-        <img src="./assets/LOGO_INTELEC-LIGHT.svg" alt="logo intelec" class="logo">
+        <div class="initial-footer">
+            <div>
+                <img src="./assets/LOGO_INTELEC-LIGHT.svg" alt="logo intelec" class="logo">
+            </div>
+            <div>
+                <img src="./assets/facebook.svg" alt="icone facebook">
+                <img src="./assets/twitter.svg" alt="icone twitter">
+                <img src="./assets/instagram.svg" alt="icone instagram">
+                <img src="./assets/youtube.svg" alt="icone youtube">
+                <img src="./assets/linkedin.svg" alt="icone linkedin">
+            </div>
+            
+        </div>        
         <div class="box-footer">
             <div>
                 <ul>
                     <li>Intelec</li>
-                    <li><a href="">Inicio</a></li>
-                    <li><a href="">A maquininha</a></li>
-                    <li><a href="">Simulador</a></li>
-                    <li><a href="">Vantagens</a></li>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#product">Maquininha</a></li>
+                    <li><a href="#simulator">Simulador</a></li>
+                    <li><a href="#benefits">Vantagens</a></li> 
                 </ul>
             </div>
             <div>

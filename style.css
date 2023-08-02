@@ -15,9 +15,25 @@
     font-family: Helvetica;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 /* ----- Configurações default ----- */
 
 /* ----- Configurações principais ----- */
+
+h2{
+    font-size: 2.4rem;
+    font-weight: 200;
+    text-align: center;
+    margin: 4vh 0;
+}
+
+h3{
+    font-size: 2rem;
+    font-weight: 200;
+}
 
 ul{
     list-style: none;
@@ -38,7 +54,6 @@ button{
 
 button:hover{
     background-color: var(--dark-color);
-    /* color: var(--light-color); */
 }
 
 header{
@@ -53,6 +68,13 @@ main{
 section{
     width: 100%;
     display: flex;
+}
+
+.icon-whatsapp{
+    position: fixed;
+    cursor: pointer;
+    width: 80px;
+    animation: fadeInOut 2s infinite;
 }
 
 /* ----- Configurações principais ----- */
@@ -82,12 +104,11 @@ nav{
 }
 
 .menu-header > li > a:hover{
-    /* color: var(--dark-color); */
     opacity: 0.5;
 }
 
-#btn-pedir-agora{
-    font-size: 1.2rem;
+#btn-pedir-agora{ 
+    font-size: 1.2rem; /* AJUSTAR TAMANHO EM DIFERENTES FORMATOS */
     padding: 0.8rem 2.8rem;
 }
 
@@ -97,6 +118,18 @@ nav{
 
 #home{
     background-color: var(--primary-color);
+    color: var(--light-color);
+}
+
+#home > div > h1,
+#home > div > p,
+#home > div > button{
+    animation: fromLeft .7s .3s backwards;
+}
+
+#home > div > img{
+    filter: drop-shadow(12px 12px 0px var(--dark-color));
+    animation: fromRight .7s .3s backwards, tiltAnimation 2s infinite;;
 }
 
 .fees-box{
@@ -107,27 +140,124 @@ nav{
     background-color: var(--dark-color);
     color: var(--light-color);
     border-radius: 24px;
-    padding: 2vh 2vw; /* VERIFICAR MOBILE */
     margin: 0 auto;
-    margin-top: -8vh;  /* VERIFICAR MOBILE */
+    gap: 2vh;
 }
 
 .fees-box > h3 {
     font-weight: bold;
-    margin-bottom: 2vh;
 }
 
 .fees-box > button{
-    margin-top: 2vh;
     padding: 2vh 2vw;
     background-color: var(--light-color);
     color: var(--primary-color);
-    font-size: 1.5rem;
     border-radius: 24px;
 }
 
 .fees-box > button:hover{
     opacity: 0.6;
+}
+
+#product{
+    padding: 4vh 8vw;
+}
+
+#product > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-product {
+    font-size: 1.2rem;
+}
+
+#product > div > img{
+    margin-left: 8vw;
+}
+
+#product > div > button,
+.simulator-result > button{
+    width: 200px;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+}
+
+#product > div > button:hover,
+.simulator-result > button:hover{
+    background-color: var(--dark-color);
+}
+
+#simulator{
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 4vh 0;
+}
+
+#simulator > h2{
+    color: var(--light-color);
+}
+
+.simulator-box{
+    background-color: var(--box-section-color-light);
+    width: 90%;
+    border-radius: 8px;
+    display: flex;
+    padding: 4vh 4vw;
+}
+
+.simulator-fees div{
+    display: flex;
+}
+
+.simulator-fees label{
+    color: var(--box-section-color-gray);
+    font-size: 1.2rem;
+    margin: 2vh 0 1vh 0;
+}
+
+.simulator-fees div input,
+.simulator-fees div select{     
+    height: 6vh;
+    border-radius: 4px;
+    border: 1px solid var(--box-section-color-gray);
+    padding-left: 1vw;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.result-text-value{
+    margin: 2vh 0;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.result-comparative > p{
+    font-size: 1rem;
+}
+
+.result-comparative > p > span{
+    font-weight: bold;
+}
+
+#saving-result{
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border-radius: 12px;
+}
+
+#benefits{
+    flex-direction: column;
+    align-items: center;
+    margin: 4vh 0;
+}
+
+.benefits-box{
+    display: flex;
+    width: 90%;
 }
 
 .benefits-card{
@@ -146,6 +276,14 @@ nav{
     width: 64px;
 }
 
+.benefits-card > p:first-child{
+    font-size: 1.2rem;
+}
+
+.benefits-card > p:last-child{
+    font-size: 1.2rem;
+}
+
 .title-card{
     font-weight: bold;
     margin: 2vh 0; 
@@ -153,6 +291,54 @@ nav{
 
 .content-card{
     font-weight: 200;
+}
+
+#faq{
+    flex-direction: column;
+}
+
+.accordion{
+    width: max(60vw, 300px);
+    margin: 0 auto;
+}
+
+.accordion-item{
+    background-color: var(--light-color);
+    border: 1px solid var(--box-section-color-light);
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.accordion-header{
+    padding: 1rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.accordion-content{
+    padding: 0.4rem;
+    font-size: .9rem;
+    line-height: 1.5;
+}
+
+.accordion-item--active .accordion-header{
+    background-color: var(--box-section-color-gray);
+}
+
+.accordion-item--active .accordion-content{
+    max-height: 1000px;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.accordion-item--closed .accordion-content{
+    max-height: 0;
+    overflow: hidden;
+}
+
+.accordion-content{
+    transition: max-height 0.3s ease-out;
 }
 
 /* ----- Configurações corpo END ----- */
@@ -166,8 +352,36 @@ footer{
     gap: 2vh;
 }
 
-footer > img{
+.initial-footer{
+    display: flex;
+    /* margin-top: 4vh; */
+}
+
+.initial-footer > div > .logo{
     margin: 4vh 0 0 8vw;
+}
+
+.initial-footer > div:last-child img{
+    width: 28px;
+    cursor: pointer;
+}
+
+.box-footer{
+    display: flex;
+    padding: 2vh 8vw;
+    justify-content: space-between;
+    color: var(--light-color);
+}
+
+.box-footer > div > ul > li{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.box-footer > div > ul > li > a{
+    color: var(--light-color);
+    font-size: 1rem;
+    font-weight: lighter;
 }
 
 .footer-credits{
@@ -183,27 +397,12 @@ footer > img{
 @media screen and (min-device-width: 500px){
 
     .icon-whatsapp{
-        position: fixed;
         bottom: 10px;
         right: 10px;
-        width: 80px;
-        cursor: pointer;
     }
 
     h1{
         font-size: 4.2rem;
-    }
-
-    h2{
-        font-size: 2.4rem;
-        font-weight: 200;
-        text-align: center;
-        margin: 4vh 0;
-    }
-
-    h3{
-        font-size: 2rem;
-        font-weight: 200;
     }
 
     p{
@@ -220,6 +419,10 @@ footer > img{
         margin-top: 4vh;
     }
 
+    .menu-hamburguer{
+        display: none;
+    }
+
     #home{
         gap: 16vw;
     }
@@ -230,8 +433,7 @@ footer > img{
         align-items: flex-start;
         justify-content: center;
         height: 100vh;
-        gap: 1vh;
-        color: var(--light-color);
+        gap: 1vh;     
     }  
 
     #home button{
@@ -246,19 +448,27 @@ footer > img{
 
     #home > div > img{
         width: max(32vw, 200px);
-        filter: drop-shadow(12px 12px 0px var(--dark-color));
+    }
+
+    .fees-box{
+        padding: 2vh 2vw; 
+        margin-top: -8vh;  
+    }
+    
+    .fees-box > h3 {
+        margin-bottom: 2vh;
+    }
+    
+    .fees-box > button{
+        font-size: 1.5rem;
     }
 
     #product{
-        padding: 4vh 8vw;
         gap: 4vw;   
     }
 
     #product > div {
         width: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
     }
 
     #product > div > h2 {
@@ -269,11 +479,6 @@ footer > img{
         margin-bottom: 2vh;
     }
 
-    .text-product {
-        font-size: 1.2rem;
-        font-weight: bold;
-    }
-
     .check-product{
         font-size: 1rem;
         font-weight: 200;
@@ -281,68 +486,10 @@ footer > img{
 
     #product > div > img{
         width: max(28vw, 160px);
-        margin-left: 8vw;
-    }
-
-    #product > div > button,
-    .simulator-result > button{
-        width: 200px;
-        background-color: var(--primary-color);
-        color: var(--light-color);
-    }
-
-    #product > div > button:hover,
-    .simulator-result > button:hover{
-        background-color: var(--dark-color);
-    }
-
-    #benefits{
-        flex-direction: column;
-        align-items: center;
-        margin: 4vh 0;
-    }
-
-    #simulator{
-        flex-direction: column;
-        align-items: center;
-        background-color: var(--primary-color);
-        padding: 4vh 0;
-    }
-
-    #simulator > h2{
-        color: var(--light-color);
-    }
-
-    .simulator-box{
-        background-color: var(--box-section-color-light);
-        width: 90%;
-        border-radius: 8px;
-        display: flex;
-        padding: 4vh 4vw;
     }
 
     .simulator-box > div{
         width: 50%;
-    }
-
-    .simulator-fees div{
-        display: flex;
-    }
-
-    .simulator-fees label{
-        color: var(--box-section-color-gray);
-        font-size: 1.2rem;
-        margin: 2vh 0 1vh 0;
-    }
-
-    .simulator-fees div input,
-    .simulator-fees div select{     
-        height: 6vh;
-        border-radius: 4px;
-        border: 1px solid var(--box-section-color-gray);
-        padding-left: 1vw;
-        font-size: 1.2rem;
-        cursor: pointer;
     }
 
     .sales-input{
@@ -361,111 +508,210 @@ footer > img{
         width: 50%;  
     }
 
-    .result-text-value{
-        margin: 2vh 0;
-        color: var(--primary-color);
-        font-weight: bold;
-        font-size: 3rem;
-    }
-
-    .result-comparative > p{
-        font-size: 1rem;
-    }
-
-    .result-comparative > p > span{
-        font-weight: bold;
-    }
-
     #saving-result{
-        background-color: var(--primary-color);
-        color: var(--light-color);
         padding: 0.5vh 0.5vw;
-        border-radius: 12px;
     }
 
     .benefits-box{
-        display: flex;
         flex-wrap: wrap;
         gap: 2vw;
         width: 90%;
     }
 
-    .benefits-card > p:first-child{
-        font-size: 1.2rem;
-    }
-
-    .benefits-card > p:last-child{
-        font-size: 1.2rem;
-    }
-
-    #faq{
-        flex-direction: column;
-    }
-
-    .accordion{
+   .accordion{
         width: max(60vw, 300px);
-        margin: 0 auto;
     }
 
-    .accordion-item{
-        background-color: #fff;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin-bottom: 1rem;
-        overflow: hidden;
-    }
-
-    .accordion-header{
-        padding: 1rem;
-        font-size: 1.3rem;
-        font-weight: bold;
-        cursor: pointer;
-    }
-
-    .accordion-content{
-        padding: 0.4rem;
-        font-size: .9rem;
-        line-height: 1.5;
-    }
-
-    .accordion-item--active .accordion-header{
-        background-color: #ddd;
-    }
-
-    .accordion-item--active .accordion-content{
-        max-height: 1000px;
-        transition: max-height 0.5s ease-in-out;
-    }
-
-    .accordion-item--closed .accordion-content{
-        max-height: 0;
-        overflow: hidden;
-    }
-    
-    .accordion-content{
-        transition: max-height 0.3s ease-out;
-    }
-
-    .box-footer{
-        display: flex;
-        padding: 2vh 8vw;
+    .initial-footer{
         justify-content: space-between;
-        color: var(--light-color);
     }
 
-    .box-footer > div > ul > li{
-        font-size: 1.2rem;
-        font-weight: bold;
+    .initial-footer > div:last-child{
+        margin: 4vh 8vw 0 0;
     }
 
-    .box-footer > div > ul > li > a{
-        color: var(--light-color);
-        font-size: 1rem;
-        font-weight: lighter;
+    .initial-footer > div:last-child img{
+        margin-left: 1vw;
     }
    
 }
 
 @media screen and (max-device-width: 500px){
 
+    h1{
+        font-size: 2.8rem;
+    }
+
+    p{
+        font-size: 1.2rem;
+    }
+
+    .icon-whatsapp{    
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+    }
+
+    .menu-header{
+        display: none;
+    }
+
+    .menu-header-open{
+        display: flex;
+        position: absolute;
+        font-size: 1.5rem;
+        padding: 4vh;
+        z-index: 2;
+        top: 70px;
+        right: 0;
+        background-color: var(--light-color);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 4vh;
+        width: 100%;
+        border-radius: 0 0 12px 12px;     
+    }
+
+    .menu-header-open button{
+        width: 100%;
+    }
+    
+
+    #home{
+        flex-direction: column;
+        padding-left: 2vw;
+        height: 100vh;
+    }
+
+    #home > div:first-child{
+        padding-top: 8vh;
+    }
+
+    #home > div > p{
+        margin-top: 4vh;
+    }
+
+    #home > div > button{
+        display: none;
+    }
+
+    #home > div > img {
+        width: 84%;
+    }
+
+    .fees-box{
+        padding: 4vh 4vw;
+        margin-top: -6vh;  
+        text-align: center;
+        gap: 4vh;
+    }
+    
+    .fees-box > button{
+        padding: 2vh 4vw;
+        font-size: 1.4rem;
+        font-weight: bold;
+    }
+
+    #product{
+        flex-direction: column;
+    }
+
+    #product > div {
+        gap: 2vh;
+    }
+
+    #product > div > img{
+        width: 90%;
+    }
+
+    .check-product{
+        font-size: 1.2rem;
+    }
+
+    #product > div > button,
+    .simulator-result > button{
+        width: 100%;
+        height: 8vh;
+        font-size: 1.2rem;
+        margin: 4vh 0;
+    }
+
+    .simulator-box{
+        flex-direction: column;
+    }
+
+    .simulator-fees div{
+        flex-direction: column;
+    }
+
+    .simulator-result{
+        padding-top: 6vh;
+        text-align: center;
+    }
+
+    #saving-result{
+        padding: 0.5vh 1.5vw;
+    }
+    
+    .benefits-box{
+        flex-direction: column;
+        gap: 4vh;
+        align-items: center;
+    }
+
+    .accordion{
+        width: 90%;
+    }
+
+    .initial-footer{
+        flex-direction: column;
+    }
+
+    .initial-footer > div:last-child{
+        margin: 4vh 0 2vh 8vw;
+    }
+
+    .initial-footer > div:last-child img{
+        margin-right: 2vw;
+    }
+
+    .box-footer > div > ul > li{
+        margin-bottom: 1vh;
+    }
+}
+
+@keyframes fromLeft{
+    from{
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fromRight{
+    from{
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+
+@keyframes tiltAnimation {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(10deg); }
 }
